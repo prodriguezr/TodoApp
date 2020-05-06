@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/ui/style.dart';
+import 'package:todoapp/ui/intray_page.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
 
-  HomePage({key, @required this.title}) : super(key: key);
+  HomePage({key, this.title}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -40,7 +42,7 @@ class _HomePageState extends State<HomePage> {
               TabBarView(
                 children: <Widget>[
                   Container(
-                    color: Style.darkGreyColor,
+                     child: IntrayPage(),
                   ),
                   Container(
                     color: Colors.green,
@@ -50,7 +52,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Container(
                 padding: EdgeInsets.only(left: 50),
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: (MediaQuery.of(context).size.height * 0.25),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(50),
